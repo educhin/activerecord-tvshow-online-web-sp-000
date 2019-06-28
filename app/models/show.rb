@@ -6,7 +6,9 @@ def self.highest_rating
   Show.maximum("rating")
 end
 # most_popular_show: this method should return the show with the highest rating. hint: use the highest_rating method as a helper method.
-#
+def self.most_popular_show
+  Show.where("rating = #{self.highest_rating}")
+end
 # lowest_rating: returns the lowest value in the ratings column.
 #
 # least_popular_show: returns the show with the lowest rating.
